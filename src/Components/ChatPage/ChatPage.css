@@ -1,0 +1,57 @@
+.chat-box {
+  width: 100%;
+  width: 95.2%;
+  /* height: 105px; */
+  height: 6.5625rem;
+  border-radius: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1.23rem;
+  background-color: rgba(215, 199, 244, 0.13);
+}
+.chat-box-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 2.14%;
+  /* width: 65.3px; */
+  width: 4.3125rem;
+  /* height: 69px; */
+  height: 4.3125rem;
+  border-radius: 55%;
+  background-color: white;
+  overflow: hidden;
+}
+.chat-box-logo img {
+  margin-top: 2rem;
+  /* width: 123.97px; */
+  /* width: 12.2%; */
+  height: 8.25rem;
+  width: 7.75rem;
+  object-fit: cover;
+}
+.chat-box-content {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  gap: 5px;
+}
+.chat-box-title {
+  /* font-family: Ubuntu; */
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 100%;
+}
+.chat-box-text {
+  /* font-family: Open Sans; */
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 100%;
+  margin-bottom: 1rem;
+}
+.chat-box-time {
+  /* font-family: Open Sans; */
+  font-weight: 400;
+  font-size: 0.75rem;
+  line-height: 100%;
+}

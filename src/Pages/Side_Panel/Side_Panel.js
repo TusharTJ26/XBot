@@ -1,7 +1,7 @@
 import "./Side_Panel.css";
 import Box from "@mui/material/Box";
 import MenuIcon from "@mui/icons-material/Menu";
-export default function Side_Panel({ menu, setMenu }) {
+export default function Side_Panel({ menu, setMenu, pastChat, setPastChat }) {
   const width = window.innerWidth;
   return (
     <Box className="side-panel">
@@ -14,12 +14,14 @@ export default function Side_Panel({ menu, setMenu }) {
           )}
         </Box>
         <Box className="side-panel-text">New Chat</Box>
-        <Box className="side-panel-edit">
+        <Box className="side-panel-edit" onClick={() => setPastChat(false)}>
           <img src="/images/edit-icon.png" alt="edit" />
         </Box>
       </Box>
       <Box className="past-conversation-section">
-        <Box className="past-conversation">Past conversation</Box>
+        <Box className="past-conversation" onClick={() => setPastChat(true)}>
+          Past conversation
+        </Box>
       </Box>
     </Box>
   );

@@ -1,0 +1,58 @@
+.side-panel {
+  background-color: rgba(255, 255, 255, 1);
+  height: 50.4rem;
+  width: 100%;
+}
+
+.side-panel-nav {
+  height: 2.94rem;
+  background-color: rgba(215, 199, 244, 1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.side-panel-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16.14%;
+  /* width: 2.1rem; */
+  height: 2rem;
+  overflow: hidden;
+  margin-left: 1rem;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 20%;
+  color: rgba(151, 133, 186, 1);
+}
+.side-panel-edit {
+  width: 11.54%;
+  /* width: 48px; */
+  height: 1.5rem;
+  overflow: hidden;
+}
+.side-panel-edit img {
+  /* width: 100%; */
+  height: 1.5rem;
+}
+.past-conversation-section {
+  height: 3.125rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.past-conversation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 10.95rem; */
+  width: 85%;
+  height: 2.437rem;
+  border-radius: 10px;
+  background-color: rgba(215, 199, 244, 1);
+  /* font-family: Ubuntu; */
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 100%;
+  color: rgba(65, 65, 70, 1);
+}

@@ -38,7 +38,11 @@ export default function InputBar({
     setStart(false);
     const reply = replies[userInput.toLowerCase()];
     const userMessage = { sender: "You", message: userInput, time: time };
-    const aiMessage = { sender: "Soul AI", message: reply, time: time };
+    const aiMessage = {
+      sender: "Soul AI",
+      message: reply ? reply : "Sorry, Did not understand your query!",
+      time: time,
+    };
     setMessages([...messages, userMessage, aiMessage]);
     // e.target.userInput.value = "";
   };

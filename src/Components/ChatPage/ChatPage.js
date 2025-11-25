@@ -16,8 +16,8 @@ export default function ChatPage({ messages }) {
         flexDirection: "column",
       }}
     >
-      {messages.map((message) => (
-        <Box className="chat-box">
+      {messages.map((message, index) => (
+        <Box key={index} className="chat-box">
           <Box className="chat-box-logo">
             {message.sender == "Soul AI" ? (
               <img src="/images/bot-logo.png" alt="user-img" />

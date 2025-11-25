@@ -19,25 +19,27 @@ export default function PastChats({ previousChat, menu, setMenu }) {
         }}
       >
         <Box className="previouschat-container">
-          {previousChat.map((chat) => (
-            <Box className="previous-chat">
-              {chat.map((message) => (
-                <Box className="chat-box">
-                  <Box className="chat-box-logo">
-                    {message.sender == "Soul AI" ? (
-                      <img src="/images/bot-logo.png" alt="user-img" />
-                    ) : (
-                      <img src="/images/user.png" alt="user-img" />
-                    )}
-                  </Box>
-                  <Box>
-                    <Box className="chat-box-content">
-                      <Box className="chat-box-title">{message.sender}</Box>
-                      <Box className="chat-box-text">{message.message}</Box>
+          {previousChat.map((chat, index) => {
+            const key = `chat${index}`;
+            return (
+              <Box key={key} className="previous-chat">
+                {chat.map((message, index) => (
+                  <Box key={index} className="chat-box">
+                    <Box className="chat-box-logo">
+                      {message.sender == "Soul AI" ? (
+                        <img src="/images/bot-logo.png" alt="user-img" />
+                      ) : (
+                        <img src="/images/user.png" alt="user-img" />
+                      )}
                     </Box>
-                    <Box className="chat-box-time">
-                      {message.time}
-                      {/* {message.sender == "Soul AI" ? (
+                    <Box>
+                      <Box className="chat-box-content">
+                        <Box className="chat-box-title">{message.sender}</Box>
+                        <Box className="chat-box-text">{message.message}</Box>
+                      </Box>
+                      <Box className="chat-box-time">
+                        {message.time}
+                        {/* {message.sender == "Soul AI" ? (
                 <Rating
                 name="simple-controlled"
                 value={value}
@@ -48,12 +50,13 @@ export default function PastChats({ previousChat, menu, setMenu }) {
                     ) : (
                         ""
                         )} */}
+                      </Box>
                     </Box>
                   </Box>
-                </Box>
-              ))}
-            </Box>
-          ))}
+                ))}
+              </Box>
+            );
+          })}
         </Box>
         <Box sx={{ width: "100%" }}>
           <InputBar disabled={true} />

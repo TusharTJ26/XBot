@@ -16,13 +16,21 @@ export default function Side_Panel({ menu, setMenu }) {
           )}
         </Box>
         <Box className="side-panel-text">New Chat</Box>
-        <Box className="side-panel-edit" onClick={() => navigate("/")}>
-          <img src="/images/edit-icon.png" alt="edit" />
+        <Box
+          className="side-panel-edit"
+          // onClick={() => navigate("/")}
+        >
+          <a href="/">
+            <img src="/images/edit-icon.png" alt="edit" />
+          </a>
         </Box>
       </Box>
       <Box className="past-conversation-section">
-        <Box className="past-conversation" onClick={() => navigate("/history")}>
-          Past conversation
+        <Box
+          className="past-conversation"
+          // onClick={() => navigate("/history")}
+        >
+          <a href="/history">Past conversation</a>
         </Box>
       </Box>
     </Box>

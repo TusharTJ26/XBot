@@ -38,7 +38,10 @@ export default function Main_Chat({
   return (
     <Box className="chat-container">
       <Box className="main-heading">
-        {width < 475 ? <MenuIcon onClick={() => setMenu(!menu)} /> : ""} Bot AI
+        <h1>
+          {width < 475 ? <MenuIcon onClick={() => setMenu(!menu)} /> : ""} Bot
+          AI
+        </h1>
       </Box>
       <Box className="container">
         <Box sx={{ width: "100%" }}>

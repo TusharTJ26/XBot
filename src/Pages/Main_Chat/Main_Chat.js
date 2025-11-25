@@ -12,19 +12,37 @@ export default function Main_Chat({
   setPreviousChat,
   menu,
   setMenu,
-  messages,
-  setMessages,
+  // messages,
+  // setMessages,
 }) {
   const width = window.innerWidth;
   const [start, setStart] = useState(true);
-  // const [messages, setMessages] = useState([]);
-  // useEffect(() => {
-  //   const saved = JSON.parse(localStorage.getItem("currentMessages"));
-  //   if (saved) setMessages(saved);
+  const [messages, setMessages] = useState([]);
+  useEffect(() => {
+    const saved = JSON.parse(localStorage.getItem("currentMessages"));
+    if (saved) setMessages(saved);
 
-  //   const prev = JSON.parse(localStorage.getItem("chats"));
-  //   if (prev) setPreviousChat(prev);
-  // }, []);
+    const prev = JSON.parse(localStorage.getItem("chats"));
+    if (prev) setPreviousChat(prev);
+  }, []);
+  // const handleMessage = (e) => {
+  //   const time = new Date().toLocaleTimeString([], {
+  //     hour: "2-digit",
+  //     minute: "2-digit",
+  //     hour12: true,
+  //   });
+  //   e.preventDefault();
+  //   const userInput = e.target.userInput.value;
+  //   const userMessage = { sender: "You", message: userInput, time: time };
+  //   const aiMessage = { sender: "Soul AI", message: "Chala ja", time: time };
+  //   setMessages([...messages, userMessage, aiMessage]);
+  //   // e.target.userInput.value = "";
+  // };
+  // const handleSave = () => {
+  //   setPreviousChat([...previousChat, messages]);
+  //   localStorage.setItem("chats", JSON.stringify(previousChat));
+  //   setMessages([]);
+  // };
   console.log(messages);
   return (
     <Box className="chat-container">

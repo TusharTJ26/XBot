@@ -27,8 +27,10 @@ export default function ChatPage({ messages }) {
           </Box>
           <Box>
             <Box className="chat-box-content">
-              <Box className="chat-box-title">{message.sender}</Box>
-              <Box className="chat-box-text">{message.message}</Box>
+              <Box className="chat-box-title">
+                <span>{message.sender}</span>
+              </Box>
+              <p className="chat-box-text">{message.message}</p>
             </Box>
             <Box className="chat-box-time">
               {message.time}

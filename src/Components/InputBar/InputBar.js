@@ -48,10 +48,12 @@ export default function InputBar({
     <Box>
       <form onSubmit={handleMessage} style={{ width: "100%" }}>
         <Box className="chat-bar">
-          <input name="userInput" />
+          <input name="userInput" placeholder="Message Bot AI..." />
           <button type="submit">Ask</button>
           {/* <button onClick={() => handleSave()}>Save</button> */}
-          <button onClick={() => setOpen(true)}>Save</button>
+          <button type="button" onClick={() => setOpen(true)}>
+            Save
+          </button>
         </Box>
       </form>
       {open ? (

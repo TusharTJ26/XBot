@@ -1,8 +1,10 @@
 import "./Side_Panel.css";
 import Box from "@mui/material/Box";
 import MenuIcon from "@mui/icons-material/Menu";
-export default function Side_Panel({ menu, setMenu, pastChat, setPastChat }) {
+import { useNavigate } from "react-router";
+export default function Side_Panel({ menu, setMenu }) {
   const width = window.innerWidth;
+  const navigate = useNavigate();
   return (
     <Box className="side-panel">
       <Box className="side-panel-nav">
@@ -14,12 +16,12 @@ export default function Side_Panel({ menu, setMenu, pastChat, setPastChat }) {
           )}
         </Box>
         <Box className="side-panel-text">New Chat</Box>
-        <Box className="side-panel-edit" onClick={() => setPastChat(false)}>
+        <Box className="side-panel-edit" onClick={() => navigate("/")}>
           <img src="/images/edit-icon.png" alt="edit" />
         </Box>
       </Box>
       <Box className="past-conversation-section">
-        <Box className="past-conversation" onClick={() => setPastChat(true)}>
+        <Box className="past-conversation" onClick={() => navigate("/history")}>
           Past conversation
         </Box>
       </Box>

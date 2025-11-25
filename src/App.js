@@ -1,4 +1,6 @@
 import "./App.css";
+import { Routes, Route, Link } from "react-router-dom";
+
 import { useState, useEffect } from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 // import { styled } from "@mui/material/styles";
@@ -8,6 +10,8 @@ import Grid from "@mui/material/Grid";
 import Side_Panel from "./Pages/Side_Panel/Side_Panel";
 import Main_Chat from "./Pages/Main_Chat/Main_Chat";
 import PastChats from "./Components/PastChats/PastChats";
+import MainPage from "./Pages/Main-Page/MainPage";
+import ChatHistory from "./Pages/ChatHistory/ChatHistory";
 function App() {
   const isMobile = useMediaQuery("(max-width:475px)");
   const [previousChat, setPreviousChat] = useState([]);
@@ -26,89 +30,49 @@ function App() {
 
   const [menu, setMenu] = useState(false);
   return (
-    <div className="App">
-      {/* {width < 475 ? ( */}
-      {isMobile ? (
-        // <Box>
-        //   <Grid container>
-        //     {/* <Grid size={0}>
-        //       <Side_Panel />
-        //     </Grid> */}
-        //     <Grid size={12}>
-        //       {menu ? (
-        //         <Side_Panel menu={menu} setMenu={setMenu} />
-        //       ) : (
-        //         <Main_Chat menu={menu} setMenu={setMenu} />
-        //       )}
-        //     </Grid>
-        //   </Grid>
-        // </Box>
-        <Box>
-          <Grid container>
-            {/* SIDE PANEL */}
-            <Grid
-              size={12}
-              style={{
-                display: menu ? "block" : "none",
-              }}
-            >
-              <Side_Panel
-                menu={menu}
-                setMenu={setMenu}
-                pastChat={pastChat}
-                setPastChat={setPastChat}
-              />
-            </Grid>
-
-            {/* MAIN CHAT */}
-            <Grid
-              size={12}
-              style={{
-                display: menu ? "none" : "block",
-              }}
-            >
-              {pastChat ? (
-                <PastChats
-                  previousChat={previousChat}
-                  menu={menu}
-                  setMenu={setMenu}
-                />
-              ) : (
-                <Main_Chat
-                  previousChat={previousChat}
-                  setPreviousChat={setPreviousChat}
-                  menu={menu}
-                  setMenu={setMenu}
-                />
-              )}
-              {/* <Main_Chat
-                previousChat={previousChat}
-                setPreviousChat={setPreviousChat}
-                menu={menu}
-                setMenu={setMenu}
-              /> */}
-            </Grid>
-          </Grid>
-        </Box>
-      ) : (
-        <Box>
-          <Grid container>
-            <Grid size={2}>
-              <Side_Panel pastChat={pastChat} setPastChat={setPastChat} />
-            </Grid>
-            <Grid size={10}>
-              {pastChat ? (
-                <PastChats previousChat={previousChat} />
-              ) : (
-                <Main_Chat
-                  previousChat={previousChat}
-                  setPreviousChat={setPreviousChat}
-                />
-              )}
-            </Grid>
-          </Grid>
-        </Box>
-      )}
+    <div>
+      <Routes>
+        <Route
+          path="/history"
+          element={
+            <ChatHistory
+              pastChat={pastChat}
+              setPastChat={setPastChat}
+              menu={menu}
+              setMenu={setMenu}
+              previousChat={previousChat}
+            />
+          }
+        />
+        <Route
+          path="/"
+          element={
+            <MainPage
+              menu={menu}
+              setMenu={setMenu}
+              previousChat={previousChat}
+              setPreviousChat={setPreviousChat}
+              pastChat={pastChat}
+              setPastChat={setPastChat}
+            />
+          }
+        />
+      </Routes>
+      {/* <MainPage
+        menu={menu}
+        setMenu={setMenu}
+        previousChat={previousChat}
+        setPreviousChat={setPreviousChat}
+        pastChat={pastChat}
+        setPastChat={setPastChat}
+      /> */}
+      {/* <ChatHistory
+        pastChat={pastChat}
+        setPastChat={setPastChat}
+        menu={menu}
+        setMenu={setMenu}
+        previousChat={previousChat}
+      /> */}
     </div>
   );
 }

@@ -28,6 +28,14 @@ function App() {
     }
   }, []);
 
+  // useEffect(() => {
+  //   const saved = JSON.parse(localStorage.getItem("currentMessages"));
+  //   if (saved) setMessages(saved);
+
+  //   const prev = JSON.parse(localStorage.getItem("chats"));
+  //   if (prev) setPreviousChat(prev);
+  // }, []);
+
   const [menu, setMenu] = useState(false);
   return (
     <div>

@@ -20,7 +20,7 @@ export default function InputBar({
       "Sorry, i can't access your location but you can use google",
     "hi, how are you?":
       "I am fine, Thanks for asking. How are you? How can i assist you today",
-    "can you explain RESTful APIs?":
+    "can you explain restful apis?":
       "RESTful APIs are designed around the REST (Representational State Transfer) architecture, which uses HTTP requests to access and manipulate data. They follow a stateless, client-server, cacheable communications protocol.",
   };
   const [feedbackMessage, setFeedbackMessage] = useState("");
@@ -48,6 +48,10 @@ export default function InputBar({
     };
     setMessages([...messages, userMessage, aiMessage]);
     // e.target.userInput.value = "";
+    localStorage.setItem(
+      "currentMessages",
+      JSON.stringify([...messages, userMessage, aiMessage])
+    );
   };
   const handleSave = () => {
     if (disabled) return;

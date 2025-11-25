@@ -35,7 +35,7 @@ export default function PastChats({ previousChat, menu, setMenu }) {
                     <Box>
                       <Box className="chat-box-content">
                         <Box className="chat-box-title">{message.sender}</Box>
-                        <Box className="chat-box-text">{message.message}</Box>
+                        <div className="chat-box-text">{message.message}</div>
                       </Box>
                       <Box className="chat-box-time">
                         {message.time}

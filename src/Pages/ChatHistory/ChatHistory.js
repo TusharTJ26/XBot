@@ -6,12 +6,14 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 export default function ChatHistory({
+  currentMessages,
   //   pastChat,
   previousChat,
   //   setPastChat,
   menu,
   setMenu,
 }) {
+  console.log(currentMessages);
   const isMobile = useMediaQuery("(max-width:475px)");
   return (
     <div className="App">
@@ -59,6 +61,7 @@ export default function ChatHistory({
                 previousChat={previousChat}
                 menu={menu}
                 setMenu={setMenu}
+                currentMessages={currentMessages}
               />
 
               {/* <Main_Chat
@@ -80,7 +83,10 @@ export default function ChatHistory({
               />
             </Grid>
             <Grid size={10}>
-              <PastChats previousChat={previousChat} />
+              <PastChats
+                previousChat={previousChat}
+                currentMessages={currentMessages}
+              />
             </Grid>
           </Grid>
         </Box>

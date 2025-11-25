@@ -56,13 +56,7 @@ export default function Main_Chat({
       </Box>
       <Box className="container">
         <Box sx={{ width: "100%" }}>
-          {messages.length > 0 ? (
-            <ChatPage messages={messages} />
-          ) : start ? (
-            <HomePage />
-          ) : (
-            <ChatPage messages={messages} />
-          )}
+          {start ? <HomePage /> : <ChatPage messages={messages} />}
         </Box>
         <Box sx={{ width: "100%" }}>
           <InputBar

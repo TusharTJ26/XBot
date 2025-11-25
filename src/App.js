@@ -16,8 +16,24 @@ function App() {
   const isMobile = useMediaQuery("(max-width:475px)");
   const [previousChat, setPreviousChat] = useState([]);
   const [pastChat, setPastChat] = useState(false);
-
-  const [messages, setMessages] = useState([]);
+  const [currentMessages, setCurrentMessages] = useState([]);
+  // const [messages, setMessages] = useState([]);
+  useEffect(() => {
+    const saved = localStorage.getItem("currentMessages");
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        if (Array.isArray(parsed)) {
+          setCurrentMessages(parsed);
+        } else {
+          setCurrentMessages([]); // fallback
+        }
+      } catch (e) {
+        console.error("Invalid JSON in localStorage", e);
+        setCurrentMessages([]);
+      }
+    }
+  }, []);
 
   useEffect(() => {
     const saved = localStorage.getItem("chats");
@@ -37,7 +53,7 @@ function App() {
   //   const prev = JSON.parse(localStorage.getItem("chats"));
   //   if (prev) setPreviousChat(prev);
   // }, []);
-
+  console.log(currentMessages);
   const [menu, setMenu] = useState(false);
   return (
     <div>
@@ -51,6 +67,9 @@ function App() {
               menu={menu}
               setMenu={setMenu}
               previousChat={previousChat}
+              // messages={messages}
+              // setMessages={setMessages}
+              currentMessages={currentMessages}
             />
           }
         />
@@ -64,8 +83,8 @@ function App() {
               setPreviousChat={setPreviousChat}
               pastChat={pastChat}
               setPastChat={setPastChat}
-              messages={messages}
-              setMessages={setMessages}
+              // messages={messages}
+              // setMessages={setMessages}
             />
           }
         />

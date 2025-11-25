@@ -60,9 +60,15 @@ export default function InputBar({
     // localStorage.setItem("chats", JSON.stringify(previousChat));
 
     // to use with form
+    // setPreviousChat((prev) => {
+    //   const updated = [...prev, messages]; // messages is still correct here
+    //   localStorage.setItem("chats", JSON.stringify(updated));
+    //   return updated;
+    // });
     setPreviousChat((prev) => {
-      const updated = [...prev, messages]; // messages is still correct here
+      const updated = [...prev, messages];
       localStorage.setItem("chats", JSON.stringify(updated));
+      localStorage.removeItem("currentMessages");
       return updated;
     });
     setMessages([]);

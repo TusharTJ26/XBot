@@ -17,7 +17,7 @@ function App() {
   const [previousChat, setPreviousChat] = useState([]);
   const [pastChat, setPastChat] = useState(false);
 
-  // const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState([]);
 
   useEffect(() => {
     const saved = localStorage.getItem("chats");
@@ -64,8 +64,8 @@ function App() {
               setPreviousChat={setPreviousChat}
               pastChat={pastChat}
               setPastChat={setPastChat}
-              // messages={messages}
-              // setMessages={setMessages}
+              messages={messages}
+              setMessages={setMessages}
             />
           }
         />

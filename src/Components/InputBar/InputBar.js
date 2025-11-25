@@ -18,9 +18,9 @@ export default function InputBar({
       "Sorry, i can't access your location. Need any other help?",
     "hi, what is the temprature":
       "Sorry, i can't access your location but you can use google",
-    "Hi, how are you?":
+    "hi, how are you?":
       "I am fine, Thanks for asking. How are you? How can i assist you today",
-    "Can you explain RESTful APIs?":
+    "can you explain RESTful APIs?":
       "RESTful APIs are designed around the REST (Representational State Transfer) architecture, which uses HTTP requests to access and manipulate data. They follow a stateless, client-server, cacheable communications protocol.",
   };
   const [feedbackMessage, setFeedbackMessage] = useState("");
@@ -38,8 +38,8 @@ export default function InputBar({
       return;
     }
     setStart(false);
-    // const reply = replies[userInput.toLowerCase()];
-    const reply = replies[userInput];
+    const reply = replies[userInput.toLowerCase()];
+    // const reply = replies[userInput];
     const userMessage = { sender: "You", message: userInput, time: time };
     const aiMessage = {
       sender: "Soul AI",

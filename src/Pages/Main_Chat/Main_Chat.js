@@ -3,7 +3,7 @@ import "./Main_Chat.css";
 import Box from "@mui/material/Box";
 import MenuIcon from "@mui/icons-material/Menu";
 import ChatPage from "../../Components/ChatPage/ChatPage";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PastChats from "../../Components/PastChats/PastChats";
 import InputBar from "../../Components/InputBar/InputBar";
 
@@ -12,10 +12,19 @@ export default function Main_Chat({
   setPreviousChat,
   menu,
   setMenu,
+  // messages,
+  // setMessages,
 }) {
   const width = window.innerWidth;
   const [start, setStart] = useState(true);
   const [messages, setMessages] = useState([]);
+  useEffect(() => {
+    const saved = JSON.parse(localStorage.getItem("currentMessages"));
+    if (saved) setMessages(saved);
+
+    const prev = JSON.parse(localStorage.getItem("chats"));
+    if (prev) setPreviousChat(prev);
+  }, []);
   // const handleMessage = (e) => {
   //   const time = new Date().toLocaleTimeString([], {
   //     hour: "2-digit",

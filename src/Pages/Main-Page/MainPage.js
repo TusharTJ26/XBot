@@ -12,6 +12,8 @@ export default function ({
   //   setPastChat,
   previousChat,
   setPreviousChat,
+  messages,
+  setMessages,
 }) {
   const isMobile = useMediaQuery("(max-width:475px)");
   return (
@@ -61,6 +63,8 @@ export default function ({
                 setPreviousChat={setPreviousChat}
                 menu={menu}
                 setMenu={setMenu}
+                messages={messages}
+                setMessages={setMessages}
               />
               {/* <Main_Chat
                 previousChat={previousChat}

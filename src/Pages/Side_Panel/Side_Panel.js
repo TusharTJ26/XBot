@@ -15,7 +15,9 @@ export default function Side_Panel({ menu, setMenu }) {
             <img src="/images/bot-logo.png" alt="logo" />
           )}
         </Box>
-        <Box className="side-panel-text">New Chat</Box>
+        <Box className="side-panel-text">
+          <a href="/">New Chat</a>
+        </Box>
         <Box
           className="side-panel-edit"
           // onClick={() => navigate("/")}
@@ -30,7 +32,7 @@ export default function Side_Panel({ menu, setMenu }) {
           className="past-conversation"
           // onClick={() => navigate("/history")}
         >
-          <a href="/history">Past conversation</a>
+          <a href="/history">Past Conversations</a>
         </Box>
       </Box>
     </Box>

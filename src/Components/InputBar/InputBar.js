@@ -10,6 +10,17 @@ export default function InputBar({
   setStart,
   disabled,
 }) {
+  const replies = {
+    hi: "Hello User. How can i assist you today?",
+    "hi, what is the weather":
+      "Sorry, i can't access your location. Need any other help?",
+    "hi, what is my location":
+      "Sorry, i can't access your location. Need any other help?",
+    "hi, what is the temprature":
+      "Sorry, i can't access your location but you can use google",
+    "hi, how are you":
+      "I am fine, Thanks for asking. How are you? How can i assist you today",
+  };
   const [feedbackMessage, setFeedbackMessage] = useState("");
   const [open, setOpen] = useState(false);
   const handleMessage = (e) => {
@@ -25,8 +36,9 @@ export default function InputBar({
       return;
     }
     setStart(false);
+    const reply = replies[userInput.toLowerCase()];
     const userMessage = { sender: "You", message: userInput, time: time };
-    const aiMessage = { sender: "Soul AI", message: "Nothing", time: time };
+    const aiMessage = { sender: "Soul AI", message: reply, time: time };
     setMessages([...messages, userMessage, aiMessage]);
     // e.target.userInput.value = "";
   };

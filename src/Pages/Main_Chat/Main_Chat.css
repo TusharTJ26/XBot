@@ -1,5 +1,5 @@
 .chat-container {
-  height: 50.4rem;
+  min-height: 50.4rem;
   /* background-image: linear-gradient(
     to bottom,
     rgba(215, 199, 244, 1),

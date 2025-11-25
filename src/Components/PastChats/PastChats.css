@@ -7,7 +7,7 @@
   /* width: 1066.7px; */
   padding-top: 11px;
   margin: 0;
-  height: 50.4rem;
+  min-height: 50.4rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

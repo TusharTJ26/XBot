@@ -26,7 +26,7 @@ export default function InputBar({
     }
     setStart(false);
     const userMessage = { sender: "You", message: userInput, time: time };
-    const aiMessage = { sender: "Soul AI", message: "Chala ja", time: time };
+    const aiMessage = { sender: "Soul AI", message: "Nothing", time: time };
     setMessages([...messages, userMessage, aiMessage]);
     // e.target.userInput.value = "";
   };
